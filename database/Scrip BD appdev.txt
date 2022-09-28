@@ -1,0 +1,25 @@
+Scrip base de datos appdev:
+
+CREATE TABLE `habitaciones` (
+`id` int(11) UNSIGNED NOT NULL,
+`numero` varchar(11) COLLATE utf8_bin NOT NULL,
+`piso` varchar(3) COLLATE utf8_bin NOT NULL,
+`descripcion` varchar(255) COLLATE utf8_bin NOT NULL,
+`tipoHabitacion` varchar(100) COLLATE utf8_bin NOT NULL,
+`precioDiario` decimal(20) COLLATE utf8_bin NOT NULL,
+`estado` varchar(15) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE `habitaciones`
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `numero` (`numero`);
+
+ALTER TABLE `habitaciones`
+MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+-- Insert para la tabla `habitaciones`
+
+INSERT INTO `habitaciones` (`id`, `numero`, `piso`, `descripcion`,
+`tipoHabitacion`, `precioDiario`, `estado`) VALUES
+(null, '1', '1', 'una cama doble, una cama adicional, vista al mar', 'Matrimonial',345000,
+'Disponible');
